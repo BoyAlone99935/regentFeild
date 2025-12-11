@@ -26,7 +26,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://cool-sunshine-68d603.netlify.app",
+    origin: "https://sunny-dango-0a2b37.netlify.app/",
     methods: ["GET", "POST"],
   },
 });
