@@ -26,9 +26,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://spontaneous-granita-741412.netlify.app/",
+    origin: "http://localhost:5173/",
     methods: ["GET", "POST"],
-  },
+  }, 
 });
 
 // middleware
