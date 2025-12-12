@@ -26,7 +26,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://regentfeild-frontend.netlify.app/",
+    origin: "https://regent-agent.netlify.app/",
     methods: ["GET", "POST"],
   },
 });
@@ -34,7 +34,7 @@ const io = new Server(server, {
 // middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); 
 
 // routes
 app.use("/api/auth", authRoutes);
