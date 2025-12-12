@@ -26,7 +26,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://regent-agent.netlify.app/",
+    origin: "https://spontaneous-granita-741412.netlify.app/",
     methods: ["GET", "POST"],
   },
 });
