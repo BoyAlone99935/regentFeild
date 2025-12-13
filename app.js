@@ -26,7 +26,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://courageous-nougat-fcac64.netlify.app/",
+    origin: "https://regentfeil.netlify.app/",
     methods: ["GET", "POST"],
   }, 
 });
