@@ -66,6 +66,10 @@ const UserSchema = new mongoose.Schema({
   limit : {
     type : Number
   },
+  kycLevel : {
+    type : Number,
+    default: 1
+  },
   transfer: { type: Boolean, default: true }
 }, { timestamps: true });
 
