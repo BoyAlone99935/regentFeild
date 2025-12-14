@@ -26,7 +26,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://delicate-cannoli-2c436a.netlify.app/",
+    origin: "https://reliable-pasca-8f0290.netlify.app/",
     methods: ["GET", "POST"],
   }, 
 });
