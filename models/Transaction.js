@@ -39,6 +39,9 @@ const TransactionSchema = new mongoose.Schema({
   },
   after : {
     type : Number
+  },
+  senderAcct : {
+    type: Number
   }
 },{ timestamps: true }) 
 

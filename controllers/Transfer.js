@@ -37,7 +37,8 @@ const TransferFunds = async (req , res) => {
     source,
     sourceInstitution,
     before,
-    after
+    after,
+    senderAcct: senderAccountNumber
   })
 
     const UserBal = await user.findByIdAndUpdate(
