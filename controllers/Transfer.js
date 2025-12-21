@@ -12,9 +12,9 @@ const TransferFunds = async (req , res) => {
   const type = 'Debit'
   const userId = req.user.userId
   const method = 'Transfer'
-  const {amount , beneficiary , beneficiaryInstitution , source , sourceInstitution , myAccountNumber , senderAccountNumber , before , after , logo } = req.body
+  const {amount , beneficiary , beneficiaryInstitution , source , sourceInstitution , myAccountNumber , senderAccountNumber , before , after , logo , desc} = req.body
   const newBal = parseFloat(req.body.newBal)
-  console.log(newBal)
+  console.log(desc)
   if (!amount || !beneficiary || !beneficiaryInstitution || !source || !sourceInstitution) {
     throw new BadRequestError('please enter all transfer details to continue')
   }
@@ -25,6 +25,10 @@ const TransferFunds = async (req , res) => {
 
   if (!senderAccountNumber) {
     throw new BadRequestError('recipient account number not present')
+  }
+
+  if (!desc) {
+    throw new BadRequestError('missing description')
   }
 
   const details = await Transaction.create({
@@ -38,7 +42,8 @@ const TransferFunds = async (req , res) => {
     sourceInstitution,
     before,
     after,
-    senderAcct: senderAccountNumber
+    senderAcct: senderAccountNumber,
+    desc
   })
 
     const UserBal = await user.findByIdAndUpdate(
