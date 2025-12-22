@@ -100,20 +100,17 @@ UserSchema.statics.generateAccountNumber = async function() {
 
 
 
-UserSchema.statics.generateLoginCode = async function() {
+UserSchema.statics.generateLoginCode = async function () {
   let number;
   let exists = true;
 
   while (exists) {
-    // Generate a random 5-digit number
-    number = Math.floor(100000 + Math.random() * 900000).toString();
+    number = Math.floor(10000 + Math.random() * 90000).toString();
     exists = await this.findOne({ loginCode: number });
   }
 
   return number;
 };
-
-
 
 
 module.exports = mongoose.model('User', UserSchema);
