@@ -70,7 +70,15 @@ const UserSchema = new mongoose.Schema({
     type : Number,
     default: 1
   },
-  transfer: { type: Boolean, default: true }
+  transfer: { type: Boolean, default: true },
+  earnings : {
+    type: Number,
+    default: 0
+  },
+  crypto: {
+    type: Number,
+    default: 0
+  }
 }, { timestamps: true });
 
 
